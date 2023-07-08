@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/output.css">
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-12 py-3">
+          <div class="p-4 bg-info">
+            <h1 class="mb-3 text-primary display-2">Lego Store</h1>
+
+            <input
+              type="text"
+              id="width"
+              class="form-control mb-2"
+              placeholder="lego pack"
+            />
+            <label for="width" class="form-label"></label>
+
+            <input
+              type="text"
+              id="breadth"
+              class="form-control mb-3"
+              placeholder="0MMK"
+            />
+            <label for="breadth" class="form-label"></label>
+
+
+            
+             <div class="fw-bold text-white ">
+                <h4 class="text-decoration-underline">Discounts</h4>
+                <p class="mb-1">1 Lego Pack = 31000 MMK</p>
+                <p class="mb-1">3 Lego Pack = 29500 MMK</p>
+                <p>5 Lego Pack = 28000 MMK</p>
+                <hr>
+                <p class="mb-1">Big Lego 1 Pack = 60000 MMK</p>
+                <p class="mb-1">Big Lego 2 Pack = 58500 MMK</p>
+                <p class="mb-4">Big Lego 3 Pack = 57000 MMK</p>
+                <hr>
+             </div>
+            
+
+            <button id="calc" class="bg-danger mb-3 fw-bold btn">Calculate</button>
+
+            <div class="fw-bold text-white mb-3">
+                <span>Result : </span><span id="result"></span>
+                
+            </div>
+
+            <button id="clear" class="bg-danger d-block mb-3 fw-bold btn">Clear</button>
+            <button id="store" class="fw-bold bg-danger btn "> Store </button>
+
+            <ul id="results" class=" text-secondary fw-bold">
+                
+
+            </ul>
+
+            <script>
+
+            
+
+              const inputWidth = document.getElementById("width");
+              const inputBreadth = document.getElementById("breadth");
+              const calc = document.getElementById("calc");
+              const resultElement =document.getElementById("result");
+              const clear =document.getElementById("clear");
+              const store = document.getElementById("store");
+              const results=document.getElementById("results")
+
+
+
+              calc.onclick = () => {
+
+                const result = inputWidth.value * inputBreadth.value + " MMK ";
+                resultElement.innerText=`${inputWidth.value} pack * ${inputBreadth.value} MMK = ${result}`;
+                inputWidth.value=inputBreadth.value=null
+
+              };
+
+              clear.onclick = () => {
+                resultElement.innerText= null;
+              };
+
+              store.onclick = () => {
+                results.innerHTML +=`<li>${resultElement.innerText}</li>`;
+                resultElement.innerText=null;
+                
+              }
+
+
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+  </body>
+</html>

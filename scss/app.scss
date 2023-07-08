@@ -1,0 +1,20 @@
+$dark:#a6fff2;
+$info:#1e2a78;
+$primary:#e20e0e;
+$danger:#facf5a;
+$secondary:#21e6c1;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+$btn-padding-x:1rem;
+$btn-link-color:#b31e6f;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
